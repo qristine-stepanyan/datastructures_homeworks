@@ -1,0 +1,26 @@
+#include <iostream>
+#include <vector>
+std::vector<int>function(const std::vector<int>& arr){
+std::vector<int>a;
+for(int i=0;i<arr.size()- 1;++i){
+    if(arr[i]<arr[i + 1]){
+        a.push_back(arr[i]);
+        }
+    }
+return a;
+}
+int main(){
+    int n;
+    std::cin>>n;
+    std::vector<int>A;
+    int num;
+    for(int i=0;i<n;++i){
+        std::cin>>num;
+        A.push_back(num);
+    }
+    std::vector<int>Arr=function(A);
+    for(int i=0;i<Arr.size();++i){
+    std::cout<<Arr[i]<<" ";
+    }
+return 0;
+}
