@@ -1,0 +1,46 @@
+#include <iostream>
+#include <vector>
+
+bool Subset(const std::vector<char>& v1,const std::vector<char>& v2){
+    for(char c2 : v2){ 
+        bool found = false;
+        for(char c1 : v1){
+            if(c1 == c2){
+                found = true;
+                break;
+            }
+        }
+        if(!found){
+            return false;
+        }
+    }
+    return true;
+}
+int main(){
+    std::vector<char> v1,v2;
+    int size1;
+    std::cout<<"enter size of v1 ";
+    std::cin>>size1;
+    std::cout<< "enter "<<size1<<" characters for v1 ";
+    for(int i = 0;i < size1;i++){
+        char c;
+        std::cin>>c;
+        v1.push_back(c);
+    }
+    int size2;
+    std::cout<<"enter the size of v2 ";
+    std::cin>>size2;
+    std::cout<<"enter "<<size2<<" characters for v2 ";
+    for(int i = 0;i < size2;i++){
+        char c;
+        std::cin>>c;
+        v2.push_back(c);
+    }
+    if(Subset(v1,v2)){
+        std::cout<<"set 2 is a subset";
+    }
+    else{
+        std::cout<<"set 2 is not a subset";
+    }
+return 0;
+}
