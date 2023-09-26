@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+
+int function(const std::vector<int>& arr){
+    if(arr.empty()){
+    return 0; 
+    }
+    int curSum =arr[0]; 
+    int maxSum =arr[0]; 
+    for(int i = 1;i<arr.size();++i){
+   curSum=std::max(maxSum+arr[i],arr[i]);
+   maxSum=std::max(maxSum,curSum);
+    }
+return maxSum;
+}
+int main(){
+    int n;
+    std::cout<<"the number of elements ";
+    std::cin>>n;
+    std::vector<int> Arr(n);
+    for (int i = 0;i < n;++i){
+        std::cout<<"element " << i + 1 << " ";
+        std::cin>>Arr[i];
+    }
+int maxSum =function(Arr);
+std::cout<<maxSum;
+return 0;
+}
