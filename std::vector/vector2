@@ -1,0 +1,34 @@
+#include <iostream>
+#include <vector>
+
+bool function(std::vector<int> arr){
+    int min =arr[0];
+    int max =arr[0];
+    for(int i=1;i<arr.size();++i){
+        if(arr[i]<min){
+            min=arr[i];
+        }
+        if(arr[i]>max){
+            max=arr[i];
+        }
+    }
+    return(max-min==arr.size()- 1);
+}
+int main(){
+    int n;
+    std::cin>>n;
+    std::vector<int> Arr;
+    for(int i=0;i<n;++i){
+        int num;
+        std::cin>>num;
+        Arr.push_back(num);
+    }
+    bool res=function(Arr);
+    if(res){
+        std::cout<<"True";
+    }
+    else{
+        std::cout<<"False";
+    }
+return 0;
+}
