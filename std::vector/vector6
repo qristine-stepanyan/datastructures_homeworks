@@ -1,0 +1,42 @@
+#include <iostream>
+#include <vector>
+#include <string>
+bool function(const std::string& x){
+    for(char c : x){
+        if(c>='0' && c<='9'){
+            return true;
+        }
+    }
+  return false;
+}
+std::vector<std::string> strings(const std::vector<std::string>& v){
+    std::vector<std::string> res;
+    for(const std::string& x : v){
+        if(function(x)){
+            res.push_back(x);
+        }
+    }
+return res;
+}
+int main(){
+    int n;
+    std::cout<<"enter number of strings ";
+    std::cin>>n;
+    std::vector<std::string> v;
+    std::string String;
+    for(int i = 0;i < n;++i){
+        std::cout<<"string "<<i + 1<< " ";
+        std::cin>>String;
+        v.push_back(String);
+    }
+    std::vector<std::string> res=strings(v);
+    if(res.empty()){
+        std::cout<< " ";
+    }
+    else{
+        for(const std::string& x : res){
+            std::cout<<x<<"\n";
+        }
+    }
+return 0;
+}
