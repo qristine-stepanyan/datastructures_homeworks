@@ -1,17 +1,19 @@
 #include <iostream>
 
-int max_element(int* begin,int* end){
-  int max= *begin;
-    for(int* current = begin;current != end;++current){
+template <class T>
+T max_element(T* begin,T* end){
+  T max= *begin;
+    for(T* current = begin;current != end;++current){
         if(*current > max){
           max = *current;
         }
     }
 return max;
 }
-int min_element(int* begin,int* end){
-  int min = *begin; 
-    for(int* current = begin;current != end;++current){
+template <class T>
+T min_element(T* begin,T* end){
+  T min = *begin; 
+    for(T* current = begin;current != end;++current){
         if(*current < min){
           min = *current;
         }
